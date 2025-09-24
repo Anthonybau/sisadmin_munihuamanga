@@ -1,0 +1,168 @@
+body {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), #0083C4 !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.LabelFONT {
+    color:#555555;
+    font-family:Verdana,Arial,Tahoma,Verdana,Helvetica;
+    font-size:8pt;
+    font-weight:bold;
+}
+.DataTD {
+    border-bottom:1px solid #E6E6E6;
+    border-right:1px solid #E6E6E6;
+    padding:2px;
+    vertical-align:middle;
+}
+.backTD {
+    background-color:#F6F6F6;
+}
+.dataFONT {
+    color:#000000;
+    font-family:Verdana,Arial,Tahoma,Helvetica;
+    font-size:18pt;
+}
+.LabelTD {
+    text-align:right;
+}
+input, textarea, select {
+    color:#000000;
+    font-family:Verdana,Arial,Helvetica;
+    font-size:8pt;
+}
+
+A.link {
+    font-family: Verdana, Arial, Tahoma, Verdana, Helvetica;
+    font-size: 8pt;
+    line-height: 10px;
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 0px;
+    word-wrap: normal;
+    display: inline-block;
+}
+
+A.link:ACTIVE {
+    font-family: Verdana, Arial, Tahoma, Verdana, Helvetica;
+    font-size: 8pt;
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 0px;
+    word-wrap: normal;
+    display: inline-block;
+}
+A.link:VISITED {
+    font-family: Verdana, Arial, Tahoma, Verdana, Helvetica;
+    font-size: 8pt;
+    color: #fff;
+    font-weight: bold;
+    padding: 0px 0px;
+    word-wrap: normal;
+    display: inline-block;
+}
+A.link:HOVER {
+    font-family: Verdana, Arial, Tahoma, Verdana, Helvetica;
+    font-size: 8pt;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 0px 0px;
+    word-wrap: normal;
+    display: inline-block;
+}
+div {
+    margin-top: -5px;
+}
+
+.text-dependencia {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8pt;
+    font-style: normal;
+    color: #FFF;      
+    line-height: 1.5;
+}
+.img-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 46px;
+    padding: 2px;
+    border:1px solid #949494;
+}
+
+            
+.text {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #FFF;
+      
+}
+.headerBODY {
+	background-color: #FFF;
+	margin-top: 8px;
+	margin-bottom: 0;
+	border-bottom: 0px solid #999999;
+
+        /*)background-image: url("../img/logo.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top left*/
+}
+
+.siglas {
+	font-family: Trebuchet MS, Verdana, Arial, Helvetica;
+	font-size: 13pt;
+	font-weight: bold;
+	/*font-style: italic;*/
+	color: #FFF;
+	text-decoration: none;
+	text-align: left;
+}
+.sistema {
+	font-family: Trebuchet MS, Verdana, Arial, Helvetica;
+	font-size: 13pt;
+	font-weight: bold;
+	/*font-style: italic;*/
+	color: #FFF;
+	text-decoration: none;
+	text-align: left;
+}
+.slogan {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9pt;
+	color: #FFF;
+	text-decoration: none;
+	text-align: left;
+}
+A.navegacao:LINK {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+}
+A.navegacao:ACTIVE {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+}
+A.navegacao:VISITED {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #FFF;
+	text-decoration: none;
+}
+A.navegacao:HOVER {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #FF9966;
+	text-decoration: none;
+}

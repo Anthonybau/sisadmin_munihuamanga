@@ -1,0 +1,65 @@
+#debugScreen{
+	position : absolute;
+	top : 10px;
+	left : 9%;
+	width : 80%;
+	font-family: "Bitstream Vera Sans", "Trebuchet MS", Verdana,
+	Tahoma, Arial, helvetica, sans-serif;
+	background-color: #FFF;
+	border : 1px solid #000;
+	-moz-opacity : 0.85;
+}
+#debugScreen h1{
+	margin : 0;
+	padding : 4px;
+	font-size : 1.5em;
+	color : #FFF;
+	background : #F44;
+}
+#debugScreen h2 {
+	color : #000;
+	background : #FFF;
+	border : none;
+	margin-top: 0;
+	margin-bottom: 4px;
+	font-size: medium;
+	font-weight: bold;
+	text-decoration: underline;
+}
+#debugScreen pre{
+	font-size: .8em;
+	line-height: 120%;
+	font-family: 'Courier New', Courier, monospace;
+	background-color: #fee;
+	color: #333;
+	border: 1px dotted #000;
+	padding: 5px;
+	margin: 8px;
+	width: 90%;
+}
+#debugScreen b{
+	font-family: 'Courier New', Courier, monospace;
+	font-weight : normal;
+	background : #f99;
+	display : block;
+}
+#debugScreen div{
+	padding-left: 8px;
+}
+#debugScreen .info{
+	padding : 8px;
+	margin : 4px 8px 4px 8px;
+	background-color: #fff;
+	border: 3px solid #FBEE1A;
+	-moz-border-radius: 10px;
+}
+#debugScreen table{
+	width : 90%;
+}
+#debugScreen table td{
+	line-height : 100%;
+	padding : 4px;
+}
+#debugScreen table th{
+	text-align : left;
+}

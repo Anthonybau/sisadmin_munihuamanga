@@ -1,0 +1,95 @@
+body {
+background-position:0 0;
+background-repeat:repeat-x;
+font-family:tahoma,sans-serif;
+font-size:70%;
+text-align:center;
+background-color:#EFF4F8;
+color:#333;
+margin:0;
+padding:0;
+}
+
+#wrapper {
+background-position:100% 0;
+background-repeat:repeat-x;
+text-align:left;
+margin:0 auto;
+padding:0 4px 0 5px;
+}
+
+
+#wrapper.region9 {
+width:402px;
+background-color:blue;
+}
+
+
+#wrapper{padding:0}
+
+
+#wrapper .right{overflow:hidden; }
+#wrapper .linklist16 li.first{padding-left:0}
+#wrapper .hide{display:none}
+#wrapper .selected{font-weight:bold}
+
+
+#header{border-top:1px solid #fff;margin:0}
+
+#area_columns12{width:100%}
+
+
+
+#wrapper{padding:0}
+
+
+
+
+
+
+#wrapper .regionL{margin-right:0;width:402px} /*ANCHO*/
+
+#wrapper #wideinfopane{margin:0}
+#wideinfopane .wideslide{float:left}
+#wideinfopane .wideslide ul,#wideinfopane .nslide ul{list-style-type:none;padding:0;margin:0;width:100%}
+#wideinfopane .halfslide{width:27.8%;float:right}
+#wideinfopane .halfslide .thumbimg li{clear:left;float:left;width:100%;border-bottom:1px solid #A2A2A2}
+#wideinfopane .halfslide .thumbimg li.last{border-bottom:none}
+#wideinfopane .halfslide .thumbimg li.selected,#wideinfopane .halfslide .thumbimg li:hover{cursor:pointer}
+#wideinfopane .halfslide .thumbimg img{border:none;display:inline;float:left;padding:5px 8px 5px 5px}
+#wideinfopane .halfslide span{display:block;line-height:14px;padding:10px 2px 8px 0;height:1%}
+#wideinfopane .slideimage span,#wideinfopane .slideimage a{font:bold 11px Tahoma,Geneva,Arial,Verdana,sans-serif;color:#FFF}
+#wideinfopane .slideimage span.desc a,#wideinfopane .slideimage span.desc{font-size:15px;display:block;line-height:1.4em;margin:6px 0 0 0}
+
+#wideinfopane .halfslide a{text-decoration:none;color:#70777D;width:100%;font:bold 11px Tahoma,Geneva,Arial,Verdana,sans-serif}
+#wideinfopane .slideimage .linkedimg{display:none}
+fault,#wideinfopane .slideimage .show,#wideinfopane .linkedimg img{display:block}
+#wideinfopane .slideimage a img{border:0px solid #5A595A}
+
+
+#wideinfopane .wideslide .slideimage{float:left;width:72.1%;min-width:473px}
+#wideinfopane .adv ul a,#wideinfopane .adv span{padding:0 10px;color:#FFF}
+
+#wideinfopane .adv .lnk:hover,#wideinfopane .slideimage .desc a:hover{text-decoration:underline}
+#wideinfopane .slideimage li,#wideinfopane .slideimage a.more{display:inline;width:auto}
+#wideinfopane .slideimage a.lnk{color:#DA9125}
+#wrapper #wideinfopane .c1{padding:0}
+#wideinfopane .halfslide li.selected a,#wideinfopane .halfslide li:hover a{color:#333}
+
+
+#wideinfopane .halfslide{width:181px}
+#wideinfopane .wideslide .slideimage{min-width:402px;width:181px}
+#wideinfopane .slideimage .linkedimg .adv{width:402px;margin-left:0px}
+#area_columns12,#spotlight #spotlist{float:left}
+
+#wideinfopane .slideimage .linkedimg .adv{width:402px;position:relative;margin:0;background:url('h3bg.png') repeat;height:0;overflow:hidden}
+
+
+#wideinfopane h4,#wideinfopane .wideslide,#wideinfopane .halfslide .thumbimg li {
+background:#EFF4F8;
+}
+
+#wideinfopane .halfslide .thumbimg li.selected,#wideinfopane .halfslide .thumbimg li:hover {
+background:#FF9966;
+}
+/*carlos horna 152 3ra etapa la primavera.*/

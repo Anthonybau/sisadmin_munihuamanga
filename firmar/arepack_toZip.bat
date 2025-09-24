@@ -1,0 +1,1 @@
+for %%F in (%1) do ( "C:\Program Files\7-Zip\7z.exe" x -y -o"%%F_tmp" "%%F" * & pushd %%F_tmp & "C:\Program Files\7-Zip\7z.exe" a -y -r -tzip ..\"%%~nF".zip * & popd & rmdir /s /q "%%F_tmp" )

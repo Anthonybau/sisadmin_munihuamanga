@@ -1,0 +1,7 @@
+Debugscreen
+
+Incluir estos documentos en las páginas web que queramos ir depurando
+
+<link rel="stylesheet" href="../inc/js/debugjs/debug.css">
+<script type="text/javascript" src="<?=PATH_INC?>js/debugjs/ie_xmlhttp.js"></script>
+<script type="text/javascript" src="<?=PATH_INC?>js/debugjs/debug.js"></script>

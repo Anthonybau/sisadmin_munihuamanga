@@ -1,0 +1,15 @@
+CREATE TABLE gestdoc.chat (
+  id SERIAL,
+  fromx TEXT,
+  tox TEXT,
+  message TEXT,
+  sent TIMESTAMP WITHOUT TIME ZONE,
+  recd INTEGER DEFAULT 0
+) 
+WITH (oids = false);
+
+ALTER TABLE admin.usuario
+  ADD COLUMN usua_online TIMESTAMP(0) WITHOUT TIME ZONE;
+
+COMMENT ON COLUMN admin.usuario.usua_online
+IS 'guarda el tiempo que accedio por ultima vez el usuario';

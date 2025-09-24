@@ -1,0 +1,31 @@
+/* inicio css menu tree*/
+.menuTreeBODY {
+	background-color: #D6DEEC;
+	border-left: 0px solid #003399;
+}
+
+menu_tree_td.label {background-color: #FFFFFF; font-weight: bold; font-size: 11px; color: black; font-family: Verdana, Arial, sans;}
+
+a.menu_tree_td
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	color: #000000;	
+	text-decoration: none;
+	}
+a.menu_tree_td:link 
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: bold;
+	color: #000000;		
+	text-decoration: none;
+	}
+a.menu_tree_td:hover 
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	color: #FF9900;
+	text-decoration: none;
+	}
+	
+/* fin css menu tree*/

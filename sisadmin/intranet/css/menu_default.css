@@ -1,0 +1,143 @@
+.select {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	color: #006699;
+}
+
+.modulo {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	color: #333333;
+	font-weight: bold;
+	cursor:pointer;
+	border-bottom: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	background-color: #E0E0E0;
+	padding: 3px;
+}
+
+.moduloTRANS {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	color: #9B222A;
+	font-weight: bold;
+	cursor:pointer;
+	border-bottom: 1px solid #C9C88B;
+	border-right: 1px solid #C9C88B;
+	background-color: #FFFFCD;
+	padding: 3px;
+}
+
+.menuBODY {
+	background-color: #EDEDED;
+	border-left: 0px solid #003399;
+}
+
+.menuBODYTRANS {
+	background-color: #FFFFE3;
+	border-left: 0px solid #003399;
+}
+
+.menuTABLE {
+	font-family: Tahoma, Verdana, Arial;
+	font-size: 8pt;
+}
+
+.menuTD {
+	background-color:#EDEDED;
+	border-bottom: 0px dashed #999999
+}
+
+.menuTDTRANS {
+	background-color: #FFFFE3;
+	border-bottom: 0px dashed #999999
+}
+
+.menuTH {
+	background-color: #D0D0D0;
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 10px;
+	font-weight: bold;
+	font-style: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+}
+
+
+A.menu:LINK {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #000;
+	text-decoration: none;
+}
+
+A.menu:ACTIVE {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #000;
+	text-decoration: none;
+}
+
+A.menu:VISITED {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #000;
+	text-decoration: none;
+}
+
+A.menu:HOVER {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #000;
+	text-decoration: underline;
+}
+
+
+.menuTH {
+	background-color: #D0D0D0;
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 10px;
+	font-weight: bold;
+	font-style: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+}
+
+
+A.menuTrans:LINK {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #9B222A;
+	text-decoration: none;
+}
+
+A.menuTrans:ACTIVE {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #9B222A;
+	text-decoration: none;
+}
+
+A.menuTrans:VISITED {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #9B222A;
+	text-decoration: none;
+}
+
+A.menuTrans:HOVER {
+	font-family: Tahoma, Verdana, Arial, Helvetica;
+	font-size: 8pt;
+	font-style: normal;
+	color: #9B222A;
+	text-decoration: underline;
+}

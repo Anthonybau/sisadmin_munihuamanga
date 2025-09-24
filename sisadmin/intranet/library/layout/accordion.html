@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html style="overflow: hidden; height: 100%;" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="language" content="en">
+
+	<title>Layout with Accordion</title>
+	
+	<link rel="stylesheet" type="text/css" href="accordion_files/accordion.css">
+
+	<style type="text/css">
+
+	body {
+		font-family: Arial, sans-serif;
+		font-size: 0.85em;
+	}
+	p {
+		margin: 1em 0;
+	}
+
+	.ui-layout-pane-west {
+		/* OVERRIDE 'default styles' */
+		padding: 0 !important;
+		overflow: hidden !important;
+	}
+
+	</style>
+
+	<!-- REQUIRED scripts for layout widget -->
+	<script type="text/javascript" src="accordion_files/jquery.js"></script>
+	<script type="text/javascript" src="accordion_files/jquery_003.js"></script>
+
+	<!-- OPTIONAL ui.draggable is required to resize panes -->
+	<script type="text/javascript" src="accordion_files/ui_003.js"></script>
+	<script type="text/javascript" src="accordion_files/ui_002.js"></script>
+
+	<!-- OPTIONAL animation effects for opening/closing panes -->
+	<script type="text/javascript" src="accordion_files/effects_003.js"></script>
+	<script type="text/javascript" src="accordion_files/effects_004.js"></script>
+	<script type="text/javascript" src="accordion_files/effects_002.js"></script>
+	<script type="text/javascript" src="accordion_files/effects.js"></script>
+
+	<!-- CUSTOM VERSION OF ui.accordion.js - HAS A 'resize' METHOD -->
+	<script type="text/javascript" src="accordion_files/ui.js"></script>
+	<!-- easing library is used by Accordion widget -->
+	<script type="text/javascript" src="accordion_files/jquery_002.js"></script>
+	<script type="text/javascript" src="accordion_files/jquery_004.js"></script>
+
+	<script type="text/javascript">
+
+	var outerLayout, myAccordion; // init global vars
+
+	$(document).ready( function() {
+
+		// PAGE LAYOUT
+		outerLayout = $('body').layout({
+			applyDefaultStyles:	true
+			// AUTO-RESIZE Accordion widget when west pane resizes
+		,	west__onresize:		function () { myAccordion.accordion('resize'); }
+		,	west__size:			300
+		});
+
+		// ACCORDION - inside the West pane
+		myAccordion = $("#MainMenu").accordion({
+			selectedClass: 	"active"
+		,	navigation:		true
+		,	fillSpace:		true
+		,	animated: 		"bounceslide"
+		});
+
+	});
+	</script>
+
+<script>if (typeof(HTMLFormElement.prototype.lp_submit) == 'undefined') { HTMLFormElement.prototype.lp_submit = HTMLFormElement.prototype.submit; HTMLFormElement.prototype.submit = function (event) { var target = event ? event.target : this; var forms = document.getElementsByTagName("form"); var formnum = -1; for (var i = 0; i < forms.length; i++) { if (forms[i] == target) { formnum = i; } } if (document.documentElement && "createEvent" in document) { var element = document.createElement("lpformsubmitdataelement"); element.setAttribute("formnum", formnum); document.documentElement.appendChild(element); var evt = document.createEvent("Events"); evt.initEvent("lpformsubmit", true, false); element.dispatchEvent(evt); } target.lp_submit(); } }</script></head><body style="border: medium none ; margin: 0pt; padding: 0pt; overflow: hidden; position: relative; height: 100%;">
+
+<div style="border: 1px solid rgb(187, 187, 187); margin: 0pt; padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: auto; visibility: visible; display: block; position: absolute; z-index: 2; left: 306px; right: 206px; top: 44px; bottom: 44px; height: 714px; width: 737px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" pane="center" class="ui-layout-center ui-layout-pane ui-layout-pane-center open"> Center Pane 
+
+	<p><b>NOTE</b>: The <i>standard</i> Accordion widget does NOT have a 'resize' method.
+		Hopefully this will be added in a future release.
+		I submitted code for such an update some time ago...</p>
+	<p><a a="ô" href="http://groups.google.com/group/jquery-ui/browse_thread/thread/f4b963fc7f387a56">UPDATE for ui.accordion widget - size() method</a></p>
+
+	<p>Without a 'resize' method, the only way to resize an accordion is to destroy-and-recreate it.
+		But there is another solution...</p>
+
+	<p>If you want to use an accordion inside a layout and have it 'auto-resize',
+		download the <u>patched version</u> used on this demo page:</p>
+	<p style="font-weight: bold;"><a a="3" href="http://layout.jquery-dev.net/download/ui-components/ui.accordion.resizable.js">ui.accordion.resizable.js</a></p>
+	<p>It is identical to the original widget, <i>except</i> it has a 'resize' method.<br>
+		(I renamed the method from 'size' to 'resize')</p>
+
+</div>
+
+<div style="border: 1px solid rgb(187, 187, 187); margin: 0pt; padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: auto; visibility: visible; display: block; position: absolute; z-index: 2; top: 0pt; bottom: auto; left: 0pt; right: 0pt; width: auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 16px;" pane="north" class="ui-layout-north ui-layout-pane ui-layout-pane-north open"> North Pane </div>
+
+<div style="border: 1px solid rgb(187, 187, 187); margin: 0pt; padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: auto; visibility: visible; display: block; position: absolute; z-index: 2; top: auto; bottom: 0pt; left: 0pt; right: 0pt; width: auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 16px;" pane="south" class="ui-layout-south ui-layout-pane ui-layout-pane-south open"> South Pane </div>
+
+<div style="border: 1px solid rgb(187, 187, 187); margin: 0pt; padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: auto; visibility: visible; display: block; position: absolute; z-index: 2; left: auto; right: 0pt; top: 44px; bottom: 44px; height: 714px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 178px;" pane="east" class="ui-layout-east ui-layout-pane ui-layout-pane-east open"> East Pane </div>
+
+<div style="border: 1px solid rgb(187, 187, 187); margin: 0pt; padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: auto; visibility: visible; display: block; position: absolute; z-index: 2; left: 0pt; right: auto; top: 44px; bottom: 44px; height: 734px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 298px;" pane="west" class="ui-layout-west ui-layout-pane ui-layout-pane-west open">
+	<div id="MainMenu" class="basic ui-accordion active">
+		<span class="ui-accordion-left"></span><a a="å" tabindex="0" class="ui-accordion-header">There is one obvious advantage:<span class="ui-accordion-right"></span></a>
+		<div style="height: 653px; display: none;">
+			<p>
+				You've seen it coming!<br>
+				Buy now and get nothing for free!<br>
+				Well, at least no free beer. Perhaps a bear,<br>
+				if you can afford it.
+			</p>
+		</div>
+		<span class="ui-accordion-left"></span><a a="¨" tabindex="0" class="ui-accordion-header">Now that you've got...<span class="ui-accordion-right"></span></a>
+		<div style="overflow: hidden; height: 653px; display: none;">
+			<p>
+				your bear, you have to admit it!<br>
+				No, we aren't selling bears.
+			</p>
+		</div>
+		<span class="ui-accordion-left"></span><a a="" tabindex="0" class="ui-accordion-header active">Rent one bear, ...<span class="ui-accordion-right"></span></a>
+		<div style="overflow: hidden; height: 653px; display: block;" class="scrolling">
+			<p>
+				get two for three beer.
+			</p>
+			<p>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+			</p>
+			<p>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+			</p>
+			<p>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+			</p>
+			<p>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+			</p>
+			<p>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+				And now for something completely different.<br>
+			</p>
+		</div>
+	</div>
+</div>
+
+<span title="Resize" class="ui-layout-resizer ui-layout-resizer-north ui-layout-resizer-open ui-layout-resizer-north-open ui-draggable" style="border: medium none ; margin: 0pt; padding: 0pt; background: rgb(221, 221, 221) none repeat scroll 0% 0%; overflow: hidden; position: absolute; font-size: 1px; text-align: left; z-index: 1; top: 38px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 1271px; height: 6px; left: 0pt; cursor: n-resize;" resizer="north" id=""><div class="ui-layout-toggler ui-layout-toggler-north ui-layout-toggler-open ui-layout-toggler-north-open" title="Close" style="margin: 0pt; padding: 0pt; background: rgb(170, 170, 170) none repeat scroll 0% 0%; overflow: hidden; position: absolute; display: block; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 50px; height: 6px; left: 610px;" id=""></div></span><span title="Resize" class="ui-layout-resizer ui-layout-resizer-south ui-layout-resizer-open ui-layout-resizer-south-open ui-draggable" style="border: medium none ; margin: 0pt; padding: 0pt; background: rgb(221, 221, 221) none repeat scroll 0% 0%; overflow: hidden; position: absolute; font-size: 1px; text-align: left; z-index: 1; bottom: 38px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 1271px; height: 6px; left: 0pt; cursor: s-resize;" resizer="south" id=""><div class="ui-layout-toggler ui-layout-toggler-south ui-layout-toggler-open ui-layout-toggler-south-open" title="Close" style="margin: 0pt; padding: 0pt; background: rgb(170, 170, 170) none repeat scroll 0% 0%; overflow: hidden; position: absolute; display: block; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 50px; height: 6px; left: 610px;" id=""></div></span><span title="Resize" class="ui-layout-resizer ui-layout-resizer-east ui-layout-resizer-open ui-layout-resizer-east-open ui-draggable" style="border: medium none ; margin: 0pt; padding: 0pt; background: rgb(221, 221, 221) none repeat scroll 0% 0%; overflow: hidden; position: absolute; font-size: 1px; text-align: left; z-index: 1; right: 200px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 736px; width: 6px; top: 44px; cursor: e-resize;" resizer="east" id=""><div class="ui-layout-toggler ui-layout-toggler-east ui-layout-toggler-open ui-layout-toggler-east-open" title="Close" style="margin: 0pt; padding: 0pt; background: rgb(170, 170, 170) none repeat scroll 0% 0%; overflow: hidden; position: absolute; display: block; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 50px; width: 6px; top: 343px;" id=""></div></span><span title="Resize" class="ui-layout-resizer ui-layout-resizer-west ui-draggable ui-layout-resizer-open ui-layout-resizer-west-open" style="border: medium none ; margin: 0pt; padding: 0pt; background: rgb(221, 221, 221) none repeat scroll 0% 0%; overflow: hidden; position: absolute; font-size: 1px; text-align: left; z-index: 1; left: 300px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 736px; width: 6px; top: 44px; cursor: w-resize;" resizer="west" id=""><div class="ui-layout-toggler ui-layout-toggler-west ui-layout-toggler-open ui-layout-toggler-west-open" title="Close" style="margin: 0pt; padding: 0pt; background: rgb(170, 170, 170) none repeat scroll 0% 0%; overflow: hidden; position: absolute; display: block; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; height: 50px; width: 6px; top: 343px;" id=""></div></span></body></html>

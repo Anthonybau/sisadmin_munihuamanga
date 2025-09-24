@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bienvenido al SISADMIN</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+   
+
+</head> 
+  
+<body> 
+    <div class="container"> 
+        <center><h1>SISADMIN 2.0</h1>
+  
+            <p> <h4>
+            Sistema de Gesti&oacute;n Documentaria            
+            </h4>
+            <img
+			src="sisadmin/intranet/img/inicio_munihuamanga.png"
+			/>		
+            </p>
+        
+        </center>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <a href="#" onClick="javascript:pageStart()"><img
+        src="sisadmin/intranet/img/index.jpg"
+        class="card-img-top"
+        alt="..."
+      /></a>        
+      <div class="card-body">
+        <h5 class="card-title">Ingresar al Sistema</h5>
+        <p class="card-text">
+          Pulsa en ingresar para acceder a Sistema de Gesti&oacute;n Documentaria.
+          <br>
+          <br>
+          <br>
+        </p>
+        <button type="button" class="btn btn-secondary btn-block" onclick="javascript:pageStart()">INGRESAR</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img
+        src="sisadmin/intranet/img/firma_digital.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">Firma Digital</h5>
+        <p class="card-text">
+          Descarga el Motor de Firma Cliente y procede a instalarlo en tu PC, este componente es necesario para Firmar documentos electrónicos desde SISADMIN
+        </p>
+        <a download  href="sisadmin/cliente_firma/4identity_2.4.8_peruvian_market_csp.exe" class="btn btn-secondary btn-block" role="button">DESCARGAR</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+      <div class="card">
+      <a href="/mpv/index.php" target="_blank"><img
+        src="sisadmin/intranet/img/mesa_partes_virtual.jpg"
+        class="card-img-top"
+        alt="..."
+      /></a>        
+      <div class="card-body">
+        <h5 class="card-title">Mesa de Partes Virtual</h5>
+        <p class="card-text">
+            Plataforma a través del cual los ciudadanos presentan sus solicitudes de manera virtual. 
+            <br>
+            <br>
+            <br>
+        </p>
+        <a href="/mpv/index.php" target="_blank" class="btn btn-secondary btn-block" role="button">INGRESAR</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col">
+    <div class="card">
+      <a href="/sisadmin/gestdoc/index.php" target="_blank"><img
+        src="sisadmin/intranet/img/index_consultar_tramite.png"
+        class="card-img-top"
+        alt="..."
+      /></a>        
+      <div class="card-body">
+        <h5 class="card-title">Consulta tu Documento</h5>
+        <p class="card-text">
+            Plataforma a través del cual los ciudadanos consultan el trámite de sus solicitudes. 
+            <br>
+            <br>
+        </p>
+        <a href="/sisadmin/gestdoc/index.php" target="_blank" class="btn btn-secondary btn-block" role="button">INGRESAR</a>
+      </div>
+    </div>
+  </div>      
+
+  <div class="col">
+  </div>  
+    
+  <div class="col">
+  </div>    
+</div>        
+        
+        
+</div>
+
+
+</body> 
+  <script language="JavaScript">
+    function pageStart() {
+            document.body.scroll = "no";
+            var width  = 700;
+            var height = 480;
+            var so = navigator.platform;
+
+            var jan = window.open('sisadmin/intranet/modulos/index.php', 'wndSISADMIN', 'width=' + width + ', height=' + height + ', toolbar=no, copyhistory=no, location=no, status=yes, menubar=no, scrollbars=no, resizable=yes, top=0, left=0');
+            //if (so.substring(0,5) != "Linux") {
+                    width  = screen.availWidth;
+                    height = screen.availHeight;
+                    jan.window.resizeTo(width, height);
+                    jan.focus();
+            //}
+    }
+    
+    function download(){
+        location.href = "cliente_firma/4identity_2.3.1_peruvian_market_csp.exe";
+    }
+    
+    
+    function consultar_resultados(){
+        location.href = "resultados/index.php";
+    }
+    
+    </script>
+</html> 
+

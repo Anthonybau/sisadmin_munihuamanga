@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cosmic-facility-370620",
+  "private_key_id": "13eeab533cdc2dac5d68558c3291fc883f3df1a5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCxjr9Tb0NZwSlT\nbxU6TtFEv1yf6h3QApTsBHju32Zz1qr9U69ibSYkqWU811raAA+6QE3dddJfC0pw\nfZ90SkdU2rKOZmyBB9DfnStwAhT6jP7CcIQ9CRu1GlOb9mOhRqnFGTtIZFxP65qe\nEexPh1INjyMApYSWn0JIAVKFnzQXZTt5cQ/7MPN6odXh/RC0wOKdVFpxRwR1ctV+\nCt63la355yEAI1G23YVVt9wa3tP3/0JhPOl9iGuVO/irTMw/Fnr6ZWaN0neN2Ac9\nvUFZpGLJBy7mwJVzprkjRrI9YBnKBiZSZ8iDD5qjfXeMzryA7rlQD7Hhgk0TRRW3\nYsA+RCDbAgMBAAECggEABJphxWT2Bwal7p7LmxZeAH1BhnfITBM1DyVSiUbLXidr\niWO5AUE5IuwtTrV6inpD7h0qp5odWQ9u35myH46paL6+sEhhebrdJF7ruFyldJVh\nKWNHWlm5GSnUjw+FJ7IwRobP7aGEbyH5gS2PxcQJUYarbqHb3RfF3R4DqKkm7ZBM\nOTsrHDFbXQVPUOcH2HrNkxpZHbStQb2KghABrM57fmzUqcsvGP3m6MJr6EcL8Qou\nc7mzNHgh8OgdloVUmGhnkwmxqXb8dFSzDy0Ej08qsRxCvgaSwrLKKGdC4SGiRyoi\ne7MYq0RMvAeT5j7/T1lvAOgKPd4WrIrTf9LnWr1R6QKBgQDd625Q4TJffxCSXRqV\nB63e3jXXV7xNOFNJiRC/pX2xDroWR0TWXtMTL3oBrS67s3SIawSVIyWWMGtcDHpr\nayqmw0CJL42q5/SqyiYEZqhdb0gXL9Q5aoDVm+YlxdIDabsfrwdkxQDfT7hmFnJP\nis3GlbKHWTmfbn6aoR9B8pOJxQKBgQDM00NV3+nZ/ZNSjgYUr9bi6cW6/iZe4RcS\nRQ9BdAKL7MjUFUHLU6vV8s+bpD1ljUzf8keO8NyExph8R5eYxLPuN0EWJkUc6Teu\ncEOm+fTwXV6uf7pd9B76tDc4exgLtV0Ccbds4QTwA7adKpYNFCbsDAY0CfeIVNdZ\nsH773P3KHwKBgEIa2VeaXWj47rTKqxptmStkQeGNrvfJqXWkMKsF3vUZD/GG9Uhu\nIq36XHuXXO5ovHPOfST3vUCJ19EpnmXVHHVkgBrdYXPheI5PfReehNSgS3cstikM\nQqhesiXaUX7WxfjgKHGqBWJ/2sv+L7rl+/oFqZKLz5BgV7I0AJ2iZrSJAoGBAJbS\nkeiwIsC0KkFF91BQUslwHnudHaAL2zNGyv8Fb8KdLxyMMpCIIiY+z4TqIZOfwpW9\nD9g/oAHdQvdwuD5zyZKF+VVYBNhPGwNGA2r279f2yPtxbkg0tIMjJO5gJcqpV72v\nAsQXxcz+zv9YFnm29xolmIPFOxKWdqTChB7uEas9AoGBAIVdlWrcrPCt8++Yugo4\nGqrhQigf4OM+vq7M8YUOqOhdFK5WyqCIJNe2qHcF1SQR+uqPfepRaSxfxWBt2Jkr\nSHijifzoigbQpywZFBADvGhJs4EtylUEXc7LxrtSY3W/xOLGAw0iEdR5TH3wchr9\nlfko9XqYZ6WAZvSp6hrviCXw\n-----END PRIVATE KEY-----\n",
+  "client_email": "cuentadrive@cosmic-facility-370620.iam.gserviceaccount.com",
+  "client_id": "101174969452217845318",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cuentadrive%40cosmic-facility-370620.iam.gserviceaccount.com"
+}
