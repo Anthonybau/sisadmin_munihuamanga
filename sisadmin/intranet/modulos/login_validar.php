@@ -31,7 +31,7 @@ $destino = "../modulos/login.php";
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
         }catch(PDOException $x) { 
-            $errores->addErro('No existe conexi&oacute;n a Base de Datos!');
+            $errores->addErro('No existe conexion a Base de Datos!');
         }
 
         if (!$errores->hasErro()) {
