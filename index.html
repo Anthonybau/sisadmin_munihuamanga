@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>SISADMIN 2.0 - Municipalidad de Huamanga</title>
 
-  <!-- Bootstrap 4 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -20,12 +20,12 @@
 <body>
 
   <header class="d-flex justify-content-center align-items-center flex-column">
-    <div class="d-flex align-items-center flex-column flex-md-row">
-  
+    <div class="d-flex align-items-center flex-column flex-md-row gap-2">
+      
       <img src="sisadmin/intranet/img/inicio_munihuamanga.png" alt="Logo de la Municipalidad Provincial de Huamanga"
-        class="mb-3 mb-md-0 mr-md-3">
-  
-      <div class="text-center text-md-left">
+        class="mb-3 mb-md-0 ms-md-3">
+
+      <div class="text-center text-md-start">
         <h1>SISADMIN 2.0</h1>
         <p>Sistema de Gestión Documentaria</p>
       </div>
@@ -46,10 +46,12 @@
           <div class="card h-100 text-center">
             <img src="sisadmin/intranet/img/ingresar_sistema_ilustracion.png" class="card-img-top"
               alt="Ilustración de un panel de control digital.">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Ingresar al Sistema</h5>
               <p class="card-text">Accede al SISADMIN para gestionar el trámite documentario.</p>
-              <span class="btn btn-primary btn-block mt-auto">INGRESAR</span>
+              <div class="d-grid mt-auto">
+                <span class="btn btn-primary">INGRESAR</span>
+              </div>
             </div>
           </div>
         </a>
@@ -61,10 +63,12 @@
           <div class="card h-100 text-center">
             <img src="sisadmin/intranet/img/mesa_partes_virtual_ilustracion.png" class="card-img-top"
               alt="Ilustración de una persona interactuando con una pantalla de servicio virtual.">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Mesa de Partes Virtual</h5>
               <p class="card-text">Presenta tus solicitudes de manera virtual a través de esta plataforma.</p>
-              <span class="btn btn-primary btn-block mt-auto">INGRESAR</span>
+              <div class="d-grid mt-auto">
+                <span class="btn btn-primary">INGRESAR</span>
+              </div>
             </div>
           </div>
         </a>
@@ -76,10 +80,12 @@
           <div class="card h-100 text-center">
             <img src="sisadmin/intranet/img/consulta_documento_ilustracion2.png" class="card-img-top"
               alt="Ilustración de una lupa sobre un documento.">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Consulta tu Documento</h5>
               <p class="card-text">Revisa el estado de tus solicitudes a través de nuestra plataforma.</p>
-              <span class="btn btn-primary btn-block mt-auto">INGRESAR</span>
+              <div class="d-grid mt-auto">
+                <span class="btn btn-primary">INGRESAR</span>
+              </div>
             </div>
           </div>
         </a>
@@ -89,11 +95,13 @@
         <div class="card h-100 text-center">
           <img src="sisadmin/intranet/img/firma_digital_ilustracion2.png" class="card-img-top"
             alt="Ilustración de una firma digital en un documento electrónico.">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Motor de Firma Digital</h5>
             <p class="card-text">Descarga el Motor de Firma Cliente y la Extensión para Google Chrome.</p>
-            <a download href="sisadmin/cliente_firma/4identity_2.4.8_peruvian_market_csp.exe"
-              class="btn btn-primary btn-block mt-auto">DESCARGAR</a>
+            <div class="d-grid mt-auto">
+              <a download href="sisadmin/cliente_firma/4identity_2.4.8_peruvian_market_csp.exe"
+                class="btn btn-primary">DESCARGAR</a>
+            </div>
           </div>
         </div>
       </div>
@@ -104,28 +112,28 @@
   <footer class="pt-5 pb-4">
     <div class="container">
       <div class="row text-center align-items-start">
-  
+
         <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5><i class="fas fa-clock mr-2"></i>Horario de Atención</h5>
-          <p><i class="far fa-calendar-alt mr-1"></i> Lunes a viernes:</p>
+          <h5><i class="fas fa-clock me-2"></i>Horario de Atención</h5>
+          <p><i class="far fa-calendar-alt me-1"></i> Lunes a viernes:</p>
           <ul class="list-unstyled mb-0">
             <li>8:00 a 13:00 hrs</li>
             <li>15:00 a 17:30 hrs</li>
           </ul>
         </div>
-  
+
         <div class="col-lg-4 mb-4 mb-lg-0">
-          <h5><i class="fas fa-map-marker-alt mr-2"></i>Contacto</h5>
+          <h5><i class="fas fa-map-marker-alt me-2"></i>Contacto</h5>
           <p>Portal Municipal Nº 44 - Parque Sucre - Huamanga</p>
-          <p><i class="fas fa-envelope mr-2"></i>Correo:
+          <p><i class="fas fa-envelope me-2"></i>Correo:
             <a href="mailto:atencionalciudadano@munihuamanga.gob.pe" class="text-break">
               atencionalciudadano@munihuamanga.gob.pe
             </a>
           </p>
         </div>
-  
+
         <div class="col-lg-4">
-          <h5><i class="fas fa-share-alt mr-2"></i>Síguenos</h5>
+          <h5><i class="fas fa-share-alt me-2"></i>Síguenos</h5>
           <div class="social-icons mt-2">
             <a href="https://www.facebook.com/munihuamanga/?locale=es_LA" aria-label="Facebook">
               <i class="fab fa-facebook"></i>
@@ -141,18 +149,16 @@
             </a>
           </div>
         </div>
-  
+
         <div class="col-12 footer-copy mt-4 pt-3 border-top small text-center">
           &copy; 2025 Municipalidad Provincial de Huamanga. Todos los derechos reservados.
         </div>
-  
+
       </div>
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

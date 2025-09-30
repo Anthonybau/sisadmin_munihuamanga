@@ -3,7 +3,6 @@
   --primary-hover: #003080;
   --header-title-color: #c10000;
   --text-color-light: #6c757d;
-  --footer-bg-pattern-top: #333;
   --footer-bg-solid-bottom: #212529;
   --footer-link-color: #ffffff;
   --footer-link-hover: #cccccc;
@@ -41,8 +40,6 @@ header .d-flex {
 
 header img {
   max-height: 60px;
-  /* CAMBIO AQUÍ: La siguiente línea fue eliminada para usar clases de Bootstrap en su lugar */
-  /* margin-right: 15px; */
   margin-bottom: 10px;
 }
 
@@ -104,6 +101,7 @@ main.container {
 }
 
 .card-body {
+  /* Se añadió d-flex y flex-column para asegurar que mt-auto funcione bien */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -132,10 +130,6 @@ main.container {
   color: inherit;
 }
 
-/*
-  CAMBIO AQUÍ: Bloque añadido para accesibilidad.
-  Aplica el mismo efecto hover a las tarjetas cuando se navega con el teclado.
-*/
 .card-link:focus-visible .card {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
@@ -157,12 +151,9 @@ main.container {
 /* === FOOTER === */
 footer {
   background-color: var(--footer-bg-solid-bottom);
-  background-size: 50px 50px;
-  background-position: 0 0, 25px 25px;
   color: white;
   padding: 40px 20px;
   margin-top: 60px;
-  text-align: center;
 }
 
 footer h5 {
@@ -198,12 +189,20 @@ footer a:hover {
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.social-icons a:hover,
-.social-icons a:focus {
+/* CAMBIO B5: Se separó :hover y :focus-visible para una mejor accesibilidad */
+.social-icons a:hover {
   color: var(--footer-link-hover);
-  transform: scale(1.15); /* Agrega efecto zoom leve */
-  outline: none;
+  transform: scale(1.15);
 }
+
+.social-icons a:focus-visible {
+  color: var(--footer-link-hover);
+  transform: scale(1.15);
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+
 
 .footer-copy {
   font-size: 0.85rem;
@@ -216,6 +215,11 @@ footer a:hover {
 
 
 /* === MEDIA QUERIES === */
+@media (max-width: 992px) { /* Ajustado a lg breakpoint */
+    .text-center.text-lg-start {
+        text-align: center !important;
+    }
+}
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.5rem;
