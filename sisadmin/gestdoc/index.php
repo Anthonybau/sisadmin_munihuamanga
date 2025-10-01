@@ -1,183 +1,179 @@
 <?php
 include("$_SERVER[DOCUMENT_ROOT]/sisadmin/intranet/library/library.php");
-
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Consulta de Expedientes</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Expedientes</title>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap4.min.js"></script>
-
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-
-<script src="js/tramite_interaccion.js"></script>
-<link rel="stylesheet" type="text/css" href="../intranet/css/contenidos.css">
-
-<!--script src="https://www.google.com/recaptcha/api.js" async defer></script-->
-</head>
-<header>
     <style>
-        .card { 
-            width: 70%;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.6); 
-            opacity: 0.8;
+        html, body {
+            height: 100%;
         }
-        
         body {
-            background-image: linear-gradient(to bottom, rgba(256,256,256,0.3) 0%,rgba(256,256,256,0.3) 100%), url('assets/imagenes/consulta_tramite_<?php echo strtolower(SIS_EMPRESA_SIGLAS)?>.jpg');
-            background-attachment: fixed;
-            background-repeat:no-repeat;
-            background-size:cover;
-            background-position:center; 
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f2f5;
         }
-        
-        #g-recaptcha-response {
-            display: block !important;
-            position: absolute;
-            margin: -78px 0 0 0 !important;
-            width: 302px !important;
-            height: 76px !important;
-            z-index: -999999;
-            opacity: 0;
-        }        
-         
+        .content-wrap {
+            flex: 1 0 auto;
+        }
+        .search-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
     </style>
-    
+</head>
+<body>
+
     <?php include("layout/page-header.php"); ?>
-    
-</header>            
-<body>    
-    <div class="container">
-            </br>
-            <div class="card text-white">
-              <div class="card-body">
-                  <form name="frm" id="frm" role="form" action="controllers/procesar_data.php" method="post"  class="form-horizontal" target="controle">
-                        <!--https://fontawesome.com/v4.7/icons/!-->
-                        <div class="form-group">
-                            <label for="numeroExpediente">N&uacute;mero de <?php echo NAME_EXPEDIENTE ?>:</label>
-                            <input type='text' class="form-control" name='nr_numTramite' id='nr_numTramite' placeholder="Escriba su Número de <?php echo NAME_EXPEDIENTE ?>" onKeyPress='return formato(event,form,this,20)' required="true">
+
+    <main class="content-wrap py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card search-card">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="card-title text-center h3 mb-4">Consulta de Expedientes</h2>
+                            
+                            <form name="frm" id="frm" action="controllers/procesar_data.php" method="post" target="controle">
+                                
+                                <div class="mb-3">
+                                    <label for="nr_numTramite" class="form-label">Número de <?php echo NAME_EXPEDIENTE; ?>:</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-lg" name="nr_numTramite" id="nr_numTramite" placeholder="Ej: 21123" required>
+                                        <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-search me-2"></i>CONSULTAR</button>
+                                    </div>
+                                    <div class="form-text">
+                                        Ingresa el Número de Trámite o Expediente para ver su estado.
+                                    </div>
+                                </div>
+                                
+                                <div class="g-recaptcha my-3" data-sitekey="<?php echo KEY_SITIOWEB; ?>"></div>
+                                
+                                <div class="accordion" id="accordionAdvancedSearch">
+                                    <div class="accordion-item border-0">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvancedSearch" aria-expanded="false" aria-controls="collapseAdvancedSearch">
+                                                ¿No recuerdas tu número de registro? Haz clic aquí para más opciones
+                                            </button>
+                                        </h2>
+                                        <div id="collapseAdvancedSearch" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionAdvancedSearch">
+                                            <div class="accordion-body border-top">
+                                                <p class="text-muted">Busca tu documento usando los siguientes criterios:</p>
+                                                
+                                                <div class="row g-3">
+                                                    <div class="col-md-12">
+                                                        <label for="documento_tipodocumento" class="form-label">Tipo de Documento:</label>
+                                                        <select class="form-select" name="documento_tipodocumento" id="documento_tipodocumento" style="width: 100%"></select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="dbusc_fdesde" class="form-label">Fecha Desde:</label>
+                                                        <input type="date" class="form-control" id="dbusc_fdesde" name="dbusc_fdesde">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="dbusc_fhasta" class="form-label">Fecha Hasta:</label>
+                                                        <input type="date" class="form-control" id="dbusc_fhasta" name="dbusc_fhasta">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="nbusc_dni_ruc" class="form-label">DNI/RUC/Carnét de Extranjería:</label>
+                                                        <input type="text" class="form-control" name="nbusc_dni_ruc" id="nbusc_dni_ruc">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="nbusc_numero" class="form-label">Número de Documento:</label>
+                                                        <input type="text" class="form-control" name="nbusc_numero" id="nbusc_numero">
+                                                    </div>
+                                                     <div class="col-12">
+                                                        <label for="Sbusc_cadena" class="form-label">Asunto/Firma/Entidad:</label>
+                                                        <input type="text" class="form-control" name="Sbusc_cadena" id="Sbusc_cadena">
+                                                    </div>
+                                                    <div class="col-12 d-grid">
+                                                         <button type="button" class="btn btn-secondary mt-2" id="btn_search"><i class="bi bi-funnel-fill me-2"></i>Buscar por Filtros</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <h5><i class="fa fa-info" aria-hidden="true"></i>nformación: <br><small>Para consultar el estado de tu solicitud, Ingresa el Número de Trámite o Expediente. Ejm: 21123</small></h5>                        
-
-                        <div class="form-group">
-                            <div
-                                class="g-recaptcha"
-                                data-sitekey="<?php echo  KEY_SITIOWEB ?>">
-                            </div>
-                        </div>
-
-                        
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block" ><span class="fa fa-check-square-o fa-2x" aria-hidden="true"></span> CONSULTAR </button>
-                        </div> 
-
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="checkMasOpciones" >
-                            <label class="form-check-label" for="checkMasOpciones">¿NO RECUERDAS tu Registro? Pulsa Aqu&iacute;</label>
-                        </div>                        
-                        
-                        <div id="divMasOpciones">
-                            <h5><i class="fa fa-info" aria-hidden="true"></i>nformación: <br><small>Busca tu documento haciendo uso de los siguientes criterios:</small></h5>                                                    
-                            <div class="form-group">
-                                <label> Tipo de Documento: </label>
-                                <select title="Selecciona Tipo de Documento" class="select" name="documento_tipodocumento" id="documento_tipodocumento" placeholder="Pulsa aquí para abrir la Lista" style="width: 100%"><                                    
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="fechaDesde">Fecha Desde:</label>
-                                <input type="date" class="form-control" placeholder="Seleccione Fecha" id="dbusc_fdesde" name="dbusc_fdesde" value = "" >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="fechaHasta">Fecha Hasta:</label>
-                                <input type="date" class="form-control" placeholder="Seleccione Fecha" id="dbusc_fhasta" name="dbusc_fhasta" value = "" >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="numeroIdentificacion">DNI/RUC/Carnét de Extranjería:</label>
-                                <input type='text' class="form-control" name='nbusc_dni_ruc' id='nbusc_dni_ruc' placeholder="Escriba aquí su número de DNI, RUC o Carnét de Extranjería"  >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="numeroDocumento">Número de Documento:</label>
-                                <input type='text' class="form-control" name='nbusc_numero' id='nbusc_numero' placeholder="Escriba aquí su número de Documento"  >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="numeroExpediente">Asunto/Firma/Entidad:</label>
-                                <input type='text' class="form-control" name='Sbusc_cadena' id='Sbusc_cadena' placeholder="Escriba aquí Asunto, Firma o Entidad"  >
-                            </div>
-                            
-                            
-                            <div class="form-group">
-                                <button type="button" class="btn btn-light btn-block" id="btn_search" name="btn_search"><span class="fa fa-search fa-2x" aria-hidden="true"></span> Buscar </button>
-                            </div> 
-
-                        </div>
-                        
-                    </form>
-              </div>
+                    </div>
+                </div>
             </div>
-            
-            <div id="divTable">
-                
-                <table id="tablResultados" class="table table-striped table-hover dt-responsive" style="width:100%">                
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Trámite</th>
-                            <th>Fecha</th>
-                            <th>Identificación</th>
-                            <th>Documento</th>
-                            <th width="40%">Asunto</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Trámite</th>
-                            <th>Fecha</th>
-                            <th>Identificación</th>
-                            <th>Documento</th>
-                            <th width="40%">Asunto</th>
-                        </tr>
-                    </tfoot>
-                </table>                
+
+            <div class="row justify-content-center mt-5" id="divTable" style="display: none;">
+                <div class="col-lg-12">
+                     <div class="card search-card">
+                         <div class="card-body p-4">
+                            <h3 class="h5 mb-3">Resultados de la Búsqueda</h3>
+                            <div class="table-responsive">
+                                <table id="tablResultados" class="table table-striped table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Trámite</th>
+                                            <th>Fecha</th>
+                                            <th>Identificación</th>
+                                            <th>Documento</th>
+                                            <th width="40%">Asunto</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                         </div>
+                     </div>
+                </div>
             </div>
-            
-    </div>
+
+        </div>
+    </main>
     
-       
+    <?php
+    // Incluimos el footer
+    if (file_exists('layout/page-footer.php')) {
+        include 'layout/page-footer.php';
+    }
+    ?>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <script src="js/tramite_interaccion.js"></script>
+    
     <script>
-
         $(document).ready(function () {
-                window.onload = function() {
-                    var $recaptcha = document.querySelector('#g-recaptcha-response');
+            // Inicializar Select2 con el tema de Bootstrap 5
+            $('#documento_tipodocumento').select2({
+                theme: "bootstrap-5",
+                placeholder: "Pulsa aquí para abrir la lista"
+            });
 
-                    if($recaptcha) {
-                        $recaptcha.setAttribute("required", "required");
-                    }
-                };
-         
-            $( '#divMasOpciones' ).hide();
-            $( '#divTable' ).hide();
+            // Lógica para el reCAPTCHA (si es necesario)
+            window.onload = function() {
+                var $recaptcha = document.querySelector('#g-recaptcha-response');
+                if ($recaptcha) {
+                    $recaptcha.setAttribute("required", "required");
+                }
+            };
         });
+    </script>
 
-
-    </script>       
 </body>
 </html>
