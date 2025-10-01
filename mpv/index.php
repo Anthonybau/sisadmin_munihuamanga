@@ -22,6 +22,7 @@
 	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/modal-custom.css">
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -572,29 +573,27 @@
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
+            <div class="modal-dialog modal-lg modal-moderno"> 
                 <div class="modal-content">
-                    <div class="modal-header" >
-                        <!--button type="button" class="close" data-dismiss="modal">&times;</button-->
-                        
-                        <div class="page-header page-header-inverse bg-indigo" >
-                            <center>
-                                <h3><span class="icon-warning"></span> AVISO</h3>
-                            </center>
-                        </div>
+                    <div class="modal-header">
+                        <h4 class="modal-title">
+                           <i class="fa fa-info-circle"></i> AVISO
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
-
+                        <!-- Aquí va el contenido dinámico o estático del modal -->
+                        <p>Este es un mensaje importante para el usuario.</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success nextBtn btn-sm pull-right" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
-
             </div>
         </div>
+
 
 <!-- Footer -->
 <?php //include("layout/page-Footer.php"); ?>

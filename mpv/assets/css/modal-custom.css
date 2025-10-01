@@ -1,0 +1,121 @@
+/* ==========================================================================
+   MODAL MODERNO – CORREGIDO Y MEJORADO
+   ========================================================================== */
+
+/* --- Animación de entrada suave --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- Contenedor Principal del Modal --- */
+.modal-moderno .modal-content {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: fadeInUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- Header del Modal --- */
+.modal-moderno .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(120deg, #005B89, #0077B6);
+    color: #ffffff;
+    padding: 18px 24px;
+    border-bottom: none;
+}
+
+/* Título con ícono */
+.modal-moderno .modal-header .modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-moderno .modal-header .modal-title i {
+    font-size: 20px;
+}
+
+/* --- Botón de Cierre (X) Alineado --- */
+.modal-moderno .modal-header .close {
+    float: none !important;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 28px;
+    font-weight: 300;
+    text-shadow: none;
+
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.modal-moderno .modal-header .close span {
+    display: block;
+    line-height: 1;
+}
+
+.modal-moderno .modal-header .close:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* --- Cuerpo del Modal --- */
+.modal-moderno .modal-body {
+    padding: 24px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4A5568;
+}
+
+/* --- Pie del Modal --- */
+.modal-moderno .modal-footer {
+    background-color: #f8f9fa;
+    padding: 15px 24px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* --- Botón del Pie --- */
+.modal-moderno .modal-footer .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-moderno .modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
