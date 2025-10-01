@@ -23,6 +23,7 @@
 	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/css/modal-custom.css">
+    <!-- <link rel="stylesheet" href="assets/css/layout/page-footer.css"> -->
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -220,7 +221,7 @@
             
             ?>
 	<!-- Page container -->
-	<div class="page-container">
+	<main class="page-container content-wrap">
 
 		<!-- Page content -->
 		<div class="page-content">
@@ -568,7 +569,7 @@
 		</div>
 		<!-- /page content -->
 
-	</div>
+	</main>
 	<!-- /page container -->
 
         <!-- Modal -->
@@ -596,7 +597,7 @@
 
 
 <!-- Footer -->
-<?php //include("layout/page-Footer.php"); ?>
+<?php include("layout/page-Footer.php"); ?>
 
 <?php
     if($hora_activo==1){
